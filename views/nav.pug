@@ -1,0 +1,26 @@
+nav.navbar(role='navigation', aria-label='main navigation')
+  .navbar-brand
+    a.navbar-item(href='#')
+      img(src='logo.png')
+
+    a.navbar-burger.burger(role="button", aria-label="menu", aria-expanded="false", data-target="navContent")
+      span(aria-hidden='true')
+      span(aria-hidden='true')
+      span(aria-hidden='true')
+
+  #navContent.navbar-menu
+    .navbar-end
+      a.navbar-item(href='#') Home
+
+      .navbar-item.has-dropdown.is-hoverable
+        a.navbar-link.is-arrowless(href='#') Features
+        .navbar-dropdown
+          a.navbar-item(href='#') About the Band
+          a.navbar-item(href='#') Featured Album
+          a.navbar-item(href='#') Music Videos
+          a.navbar-item(href='#') Tickets
+
+      a.navbar-item(href='#') Releases
+      a.navbar-item(href='#') News
+      a.navbar-item(href='#') Tour
+      a.navbar-item(href='#') Merch

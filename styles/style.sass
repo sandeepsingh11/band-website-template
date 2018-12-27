@@ -1,0 +1,95 @@
+$turquoise: #00e5cd
+$turquoiseD: #22c7b6
+$burgundy: #6c0648
+$sleekBlack: #1e1e1e
+$yellow: #fff001
+
+
+// import some Bulma styles
+@import "../node_modules/bulma/sass/utilities/_all.sass"
+@import "../node_modules/bulma/sass/base/generic.sass"
+@import "../node_modules/bulma/sass/base/helpers.sass"
+@import "../node_modules/bulma/sass/components/dropdown.sass"
+@import "../node_modules/bulma/sass/components/menu.sass"
+@import "../node_modules/bulma/sass/components/level.sass"
+@import "../node_modules/bulma/sass/components/navbar.sass"
+@import "../node_modules/bulma/sass/grid/columns.sass"
+
+html, body
+	background-color: white
+	color: black
+	margin: 0
+
+.navbar
+	background-color: black
+
+.navbar-item, .navbar-link
+	color: white
+
+.navbar img
+	width: 120px
+	height: auto
+	max-height: none
+
+.content
+	margin: 0 10%
+
+h2
+	margin-top: 0
+	padding-top: 0.83em
+
+#featured
+	background-color: $sleekBlack
+	color: white
+	margin-bottom: 0
+
+#sponsor
+	background-color: $burgundy
+	color: white
+	img
+		width: 111px
+		height: auto
+
+#releases
+	position: relative
+	img
+		width: 287px
+		height: auto
+
+.slick-prev, .slick-next
+	position: relative
+	display: inline-block
+	background-color: $sleekBlack
+	top: 0
+	left: 0
+	right: 0
+	transform: translate(0, 0)
+
+#tour
+	color: white
+	background-image: url('guitarist.jpg')
+	position: relative
+	background-position: center
+	background-repeat: no-repeat
+	background-size: cover
+
+.dateBox
+	width: 80px
+	height: 80px
+	border: solid 2px white
+
+#testimonials
+	background-color: $yellow
+	color: black
+
+	img
+		width: 160px
+		height: 160px
+		border-radius: 50%
+
+#blogPosts
+	.blog
+		width: 287px
+		
+	img
+		height: 205px

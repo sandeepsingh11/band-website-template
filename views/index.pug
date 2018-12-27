@@ -1,0 +1,100 @@
+doctype html
+html
+	head
+		title Band Website
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+
+		script(src='https://code.jquery.com/jquery-3.3.1.js')
+
+		script
+			include ../node_modules/slick-carousel/slick/slick.js
+			include ../func.js
+			include templates.pug
+		style
+			include ../node_modules/slick-carousel/slick/slick.css
+			include ../node_modules/slick-carousel/slick/slick-theme.css
+			include ../styles/style.css
+
+	body
+		include nav.pug
+
+		//- hero
+		section.hero
+			.hero-body
+				+heroCarousel
+					//- carousel
+			.hero-foot
+				#player
+
+		.content
+			//- cta section
+			+ctaComp()
+
+		//- featured songs
+		#featured.level
+			.level-left
+				.level-item
+					h2 FEATURED SONGS
+				.level-item
+					h3 [iPlayers here]
+				.level-item
+					button FULL ALBUM
+			.level-right
+				.level-item
+					h2 MUSIC VIDEO
+				.level-item
+					h3 [video here]
+
+		//- sponsors
+		#sponsor
+			.columns
+				.column
+					h2 LOVE WHAT YOU HEAR?
+					h4 Enjoy our music around the internet!
+				.column
+					//- sponsor logos
+					+sponsors()
+
+		//- releases
+		#releases.content
+			.level
+				.level-left
+					.level-item
+						h2 LATEST RELEASES
+				.level-right
+					.level-item
+						.arrows
+			//- record carousel
+			+records
+			button FULL DISCOGRAPHY
+
+		//- tour dates
+		#tour
+			.level
+				.level-left
+					.level-item
+						h2 TOUR DATES
+				.level-right
+					.level-item
+						button BUY TICKETS
+			//- tour info
+			+tourList()
+			button VIEW MORE...
+
+		//- testimonials
+		#testimonials
+			h2.has-text-centered WHAT OUR LISTENERS SAY:
+			//- listener reviews
+			+reviews()
+
+		//- blog posts
+		#blogPosts.content
+			.level
+				.level-left
+					.level-item
+						h2 MUSIC BLOG
+				.level-right
+					.level-item
+						.arrows
+			//- blog carousel
+			+blogs

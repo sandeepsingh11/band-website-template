@@ -1,0 +1,107 @@
+//- ===== WEBSITE COMPONENT TEMPLATES =====
+
+
+
+//- hero carousel
+- var heroImg = ['hero1.jpg', 'hero2.jpg', 'hero3.jpg'] 
+
+mixin heroCarousel()
+	#heroCarousel(style='position: relative; height: 550px; overflow: hidden')
+		each img in heroImg
+			img(src=img, style='margin-top: -55px')
+	
+
+//- section under the landing content
+- var ctaList = ctaData
+
+mixin ctaComp()
+	#ctaContainer
+		.columns.has-text-centered
+			each cta in ctaList
+				.column
+					img(src=cta.img)
+					h3= cta.title
+					p= cta.desc
+					button= cta.button
+
+
+// sponsors
+- var sponsors = ['myTunes.png', 'soundwave.png', 'beatbot.png', 'video.png', 'musicamp.png', 'lost-fm.png']
+- var n = 0
+
+mixin sponsors()
+	#sponsors
+		.level
+			while n < 3
+				.level-item
+					img(src=sponsors[n])
+					- n++
+		.level
+			while n < 6
+				.level-item
+					img(src=sponsors[n])
+					- n++
+
+
+// records
+- var records = recordData
+
+mixin records()
+	.multiple
+		each record in records
+			.record
+				img(src=record.img)
+				h3= record.title
+				p (#{record.year})
+
+
+// tour dates
+- var tours = tourData
+- var i = 0
+
+mixin tourList()
+	#tourList
+		- n = 0
+		while i < 6
+			.columns
+				while n < 2
+					.column
+						.dateBox
+							h2= tours[i].date
+							h4= tours[i].month
+						.tourDesc
+							h3= tours[i].location
+							p= tours[i].time
+							- i++
+							- n++
+				
+				- n = 0
+
+
+// testimonials
+- var reviews = reviewData
+
+mixin reviews()
+	#reviews
+		each review in reviews
+			.review
+				img(src=review.img)
+				h3= review.name
+				h4= review.profession
+				p= review.review
+
+
+// blog posts
+- var blogs = blogData
+
+mixin blogs()
+	.multiple
+		each blog in blogs
+			.blog
+				.blogImg
+					img(src=blog.img)
+					h2= blog.date
+					h4= blog.month
+				h3= blog.title
+				p= blog.blog
+				button READ MORE
