@@ -1,4 +1,4 @@
-nav.navbar(role='navigation', aria-label='main navigation')
+nav#navbar.navbar(role='navigation', aria-label='main navigation')
   .navbar-brand
     a.navbar-item(href='#')
       img(src='logo.png')
@@ -10,7 +10,7 @@ nav.navbar(role='navigation', aria-label='main navigation')
 
   #navContent.navbar-menu
     .navbar-end
-      a.navbar-item(href='#') Home
+      a.navbar-item(href='#', style='color: #00e5cd') Home
 
       .navbar-item.has-dropdown.is-hoverable
         a.navbar-link.is-arrowless(href='#') Features
@@ -24,3 +24,6 @@ nav.navbar(role='navigation', aria-label='main navigation')
       a.navbar-item(href='#') News
       a.navbar-item(href='#') Tour
       a.navbar-item(href='#') Merch
+
+      #cart(style='position: relative')
+        i.fa.fa-shopping-cart

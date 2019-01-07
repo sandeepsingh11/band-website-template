@@ -5,6 +5,7 @@ html
 		meta(name="viewport", content="width=device-width, initial-scale=1")
 
 		script(src='https://code.jquery.com/jquery-3.3.1.js')
+		link(rel="stylesheet", href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
 
 		script
 			include ../node_modules/slick-carousel/slick/slick.js
@@ -19,82 +20,141 @@ html
 		include nav.pug
 
 		//- hero
-		section.hero
-			.hero-body
-				+heroCarousel
+		section.hero#hero
+			.hero-body(style='position: relative')
+				+heroCarousel()
 					//- carousel
 			.hero-foot
 				#player
 
-		.content
-			//- cta section
-			+ctaComp()
+		#cta
+			.content
+				+ctaComp()
+					//- cta section
 
 		//- featured songs
-		#featured.level
-			.level-left
-				.level-item
-					h2 FEATURED SONGS
-				.level-item
-					h3 [iPlayers here]
-				.level-item
-					button FULL ALBUM
-			.level-right
-				.level-item
-					h2 MUSIC VIDEO
-				.level-item
-					h3 [video here]
+		#featured
+			.content
+				.level
+					.level-left
+						.level-item
+							h2 FEATURED SONGS
+						.level-item
+							h3 [iPlayers here]
+						.level-item
+							button.button-white FULL ALBUM
+					.level-right
+						.level-item
+							h2 MUSIC VIDEO
+						.level-item
+							h3 [video here]
 
 		//- sponsors
 		#sponsor
-			.columns
-				.column
-					h2 LOVE WHAT YOU HEAR?
-					h4 Enjoy our music around the internet!
-				.column
-					//- sponsor logos
-					+sponsors()
+			.content
+				.columns
+					.column
+						h2 LOVE WHAT YOU HEAR?
+						h4 Enjoy our music around the internet!
+					.column
+						+sponsors()
+							//- sponsor logos
 
 		//- releases
-		#releases.content
-			.level
-				.level-left
-					.level-item
-						h2 LATEST RELEASES
-				.level-right
-					.level-item
-						.arrows
-			//- record carousel
-			+records
-			button FULL DISCOGRAPHY
+		#releases
+			.content
+				.level
+					.level-left
+						.level-item
+							h2 LATEST RELEASES
+					.level-right
+						.level-item
+							.arrows1
+				+records()
+					//- record carousel
+				button.button-black FULL DISCOGRAPHY
 
 		//- tour dates
 		#tour
-			.level
-				.level-left
-					.level-item
-						h2 TOUR DATES
-				.level-right
-					.level-item
-						button BUY TICKETS
-			//- tour info
-			+tourList()
-			button VIEW MORE...
+			#tourHero
+				//- #darkOverlay
+				
+				#tourContent.content
+					.level
+						.level-left
+							.level-item
+								h2 TOUR DATES
+						.level-right
+							.level-item
+								button.button-white BUY TICKETS
+					+tourList()
+						//- tour info
+					button.button-white VIEW MORE...
+					
 
 		//- testimonials
 		#testimonials
-			h2.has-text-centered WHAT OUR LISTENERS SAY:
-			//- listener reviews
-			+reviews()
+			.content
+				h2.has-text-centered WHAT OUR LISTENERS SAY:
+				+reviews()
+					//- listener reviews
 
 		//- blog posts
-		#blogPosts.content
-			.level
-				.level-left
+		#blogPosts
+			.content
+				.level
+					.level-left
+						.level-item
+							h2 MUSIC BLOG
+					.level-right
+						.level-item
+							.arrows2
+				+blogs()
+					//- blog carousel
+
+		//- order album
+		#orderAlbum
+			.content
+				.level
 					.level-item
-						h2 MUSIC BLOG
-				.level-right
+						img(src='disc.png')
 					.level-item
-						.arrows
-			//- blog carousel
-			+blogs
+						#albumDesc
+							h2 PRE-ORDER OUR NEW ALBUM!
+							h4 Be the first to hear tracks
+							button.button-black PURCHASE NOW!
+
+		//- pre-footer
+		#prefooter
+			.content
+				.columns
+					.column
+						#news
+							h2 Recent news
+
+							+recentNews()
+								//- 3 news links
+					.column
+						#feed
+							h2 Latest feed
+
+							.feed
+								h4 3 years ago
+								hr
+								h4 Look how great sports websites are created @cmsmasters: [LINK HERE]
+							.feed
+								h4 3 years ago
+								hr
+								h4 Sports Club WordPress Theme by @cmsmasters: [LINK HERE]
+					.column
+						#photos
+							h2 Photo gallery
+
+							+gallery()
+								//- img gallery
+					.column
+						h2 Useful Links
+
+						+useful()
+							//- useful links
+		

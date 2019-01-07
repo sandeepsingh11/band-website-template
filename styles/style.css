@@ -2886,6 +2886,11 @@ html, body {
   color: black;
   margin: 0; }
 
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%; }
+
 .navbar {
   background-color: black; }
 
@@ -2898,12 +2903,64 @@ html, body {
   height: auto;
   max-height: none; }
 
+#cart {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  border: solid 2px white; }
+  #cart i {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    color: white;
+    font-size: 28px; }
+
+#heroArrows {
+  position: absolute;
+  top: 45%;
+  width: 100%; }
+  #heroArrows .slick-next {
+    float: right; }
+  #heroArrows button:hover {
+    color: #00e5cd; }
+  #heroArrows .slick-prev, #heroArrows .slick-next {
+    background-color: transparent; }
+  #heroArrows .slick-prev:before, #heroArrows .slick-next:before {
+    font-family: 'FontAwesome';
+    color: white;
+    font-size: 48px;
+    opacity: 1; }
+  #heroArrows .slick-prev:before {
+    content: "\f104"; }
+  #heroArrows .slick-next:before {
+    content: '\f105'; }
+
 .content {
-  margin: 0 10%; }
+  margin: 0 10%;
+  padding: 5% 0;
+  position: relative; }
 
 h2 {
   margin-top: 0;
   padding-top: 0.83em; }
+
+#cta .column {
+  padding: 0.75rem 1.5rem; }
+
+.button-white {
+  background-color: transparent;
+  color: white;
+  border: solid 2px white;
+  padding: 5px 15px; }
+
+.button-black {
+  background-color: transparent;
+  color: black;
+  border: solid 2px black;
+  padding: 5px 15px; }
+
+button:hover {
+  cursor: pointer; }
 
 #featured {
   background-color: #1e1e1e;
@@ -2917,12 +2974,6 @@ h2 {
     width: 111px;
     height: auto; }
 
-#releases {
-  position: relative; }
-  #releases img {
-    width: 287px;
-    height: auto; }
-
 .slick-prev, .slick-next {
   position: relative;
   display: inline-block;
@@ -2932,29 +2983,124 @@ h2 {
   right: 0;
   transform: translate(0, 0); }
 
-#tour {
-  color: white;
-  background-image: url("guitarist.jpg");
-  position: relative;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; }
+#releases {
+  position: relative; }
+  #releases img {
+    width: 287px;
+    height: auto; }
+  #releases .arrows1 button:hover {
+    color: #00e5cd; }
+  #releases .arrows1 .slick-prev, #releases .arrows1 .slick-next {
+    background-color: white;
+    margin-left: 12px; }
+  #releases .arrows1 .slick-prev:before, #releases .arrows1 .slick-next:before {
+    font-family: 'FontAwesome';
+    color: black;
+    font-size: 48px;
+    opacity: 1; }
+  #releases .arrows1 .slick-prev:before {
+    content: "\f0d9"; }
+  #releases .arrows1 .slick-next:before {
+    content: "\f0da"; }
 
-.dateBox {
-  width: 80px;
-  height: 80px;
-  border: solid 2px white; }
+#tour {
+  position: relative;
+  color: white; }
+  #tour #tourHero {
+    background-image: url("guitarist.jpg");
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; }
+  #tour #darkOverlay {
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5; }
+  #tour #tourContent .dateBox {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border: solid 2px white;
+    text-align: center; }
+    #tour #tourContent .dateBox h2 {
+      padding-top: 8px;
+      margin-bottom: 0; }
+    #tour #tourContent .dateBox h4 {
+      margin-top: 0; }
+  #tour #tourContent .tourDesc {
+    display: inline-block;
+    margin-left: 3%; }
+    #tour #tourContent .tourDesc p {
+      font-size: 0.8em; }
 
 #testimonials {
   background-color: #fff001;
   color: black; }
-  #testimonials img {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%; }
+  #testimonials #reviews {
+    position: relative; }
+  #testimonials .reviewImg {
+    display: inline-block;
+    margin-right: 65px; }
+    #testimonials .reviewImg img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%; }
+  #testimonials .reviewDesc {
+    display: inline-block;
+    width: 750px; }
+  #testimonials .reviewDots {
+    position: absolute;
+    top: 50%;
+    right: 0; }
+  #testimonials .slick-dots button:before {
+    font-size: 50px; }
 
-#blogPosts .blog {
-  width: 287px; }
+#blogPosts {
+  margin-bottom: 50px; }
+  #blogPosts .blog {
+    width: 287px !important; }
+  #blogPosts img {
+    width: 100%;
+    height: 205px; }
+  #blogPosts .blogComp {
+    background-color: white;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    padding: 5px 15px; }
+    #blogPosts .blogComp h2 {
+      margin: 0;
+      padding: 0; }
+    #blogPosts .blogComp h5 {
+      margin: 0; }
+  #blogPosts .arrows2 button:hover {
+    color: #00e5cd; }
+  #blogPosts .arrows2 .slick-prev, #blogPosts .arrows2 .slick-next {
+    background-color: white;
+    margin-left: 12px; }
+  #blogPosts .arrows2 .slick-prev:before, #blogPosts .arrows2 .slick-next:before {
+    font-family: 'FontAwesome';
+    color: black;
+    font-size: 48px;
+    opacity: 1; }
+  #blogPosts .arrows2 .slick-prev:before {
+    content: "\f0d9"; }
+  #blogPosts .arrows2 .slick-next:before {
+    content: '\f0da'; }
 
-#blogPosts img {
-  height: 205px; }
+#orderAlbum {
+  background-color: #00e5cd; }
+  #orderAlbum .content {
+    padding: 0; }
+  #orderAlbum img {
+    width: 360px;
+    height: auto;
+    transform: translate(0, -40px); }
+
+#prefooter {
+  background-color: #1e1e1e;
+  color: white; }

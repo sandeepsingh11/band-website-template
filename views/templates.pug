@@ -9,6 +9,7 @@ mixin heroCarousel()
 	#heroCarousel(style='position: relative; height: 550px; overflow: hidden')
 		each img in heroImg
 			img(src=img, style='margin-top: -55px')
+	#heroArrows
 	
 
 //- section under the landing content
@@ -22,7 +23,7 @@ mixin ctaComp()
 					img(src=cta.img)
 					h3= cta.title
 					p= cta.desc
-					button= cta.button
+					button.button-black= cta.button
 
 
 // sponsors
@@ -47,7 +48,7 @@ mixin sponsors()
 - var records = recordData
 
 mixin records()
-	.multiple
+	.multiple1
 		each record in records
 			.record
 				img(src=record.img)
@@ -85,23 +86,62 @@ mixin reviews()
 	#reviews
 		each review in reviews
 			.review
-				img(src=review.img)
-				h3= review.name
-				h4= review.profession
-				p= review.review
+				.reviewImg
+					img(src=review.img)
+				.reviewDesc
+					h3= review.name
+					h4= review.profession
+					p= review.review
+	.reviewDots
 
 
 // blog posts
 - var blogs = blogData
 
 mixin blogs()
-	.multiple
+	.multiple2
 		each blog in blogs
 			.blog
 				.blogImg
 					img(src=blog.img)
-					h2= blog.date
-					h4= blog.month
+					.blogComp
+						h2= blog.date
+						h5= blog.month
 				h3= blog.title
 				p= blog.blog
-				button READ MORE
+				button.button-black READ MORE
+
+
+
+// PREFOOTER
+
+// recent news
+mixin recentNews()
+	#recentNews
+		- n = 0
+		while n < 3
+			h4= blogs[n].title
+			p= blogs[n].month
+			if n != 2
+				hr
+			- n++
+
+// photo gallery
+mixin gallery()
+	#gallery
+		- n = 0
+		while n < 3
+			- i = 0
+				while i < 3
+					img(src='blog4.jpg', style='width: 70px; height: auto')
+					- i++
+			- n++
+
+// useful links
+- var usefuls = ['Tickets', 'Contacts', 'Tour', 'Album', 'Meet us']
+
+mixin useful()
+	#useful
+		each link in usefuls
+			a(href='#')= link
+			hr
