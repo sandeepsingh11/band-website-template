@@ -2886,6 +2886,9 @@ html, body {
   color: black;
   margin: 0; }
 
+a {
+  color: #22c7b6; }
+
 #navbar {
   position: fixed;
   top: 0;
@@ -2907,11 +2910,14 @@ html, body {
   position: relative;
   width: 46px;
   height: 46px;
-  border: solid 2px white; }
+  border: solid 2px white;
+  top: 50%;
+  margin: -25.23px 15px 0 0; }
   #cart i {
     position: absolute;
-    top: 8px;
-    left: 10px;
+    margin: -15px 0 0 -13px;
+    top: 50%;
+    left: 50%;
     color: white;
     font-size: 28px; }
 
@@ -2985,8 +2991,12 @@ button:hover {
 
 #releases {
   position: relative; }
+  #releases .record h3 {
+    margin-bottom: 0; }
+  #releases .record h3, #releases .record p {
+    margin-top: 0; }
   #releases img {
-    width: 287px;
+    width: 100%;
     height: auto; }
   #releases .arrows1 button:hover {
     color: #00e5cd; }
@@ -3006,9 +3016,11 @@ button:hover {
 #tour {
   position: relative;
   color: white; }
-  #tour #tourHero {
+  #tour #tourParallax {
     background-image: url("guitarist.jpg");
     position: relative;
+    height: 650px;
+    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; }
@@ -3019,23 +3031,28 @@ button:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.5; }
-  #tour #tourContent .dateBox {
-    display: inline-block;
-    width: 80px;
-    height: 80px;
-    border: solid 2px white;
-    text-align: center; }
-    #tour #tourContent .dateBox h2 {
-      padding-top: 8px;
-      margin-bottom: 0; }
-    #tour #tourContent .dateBox h4 {
-      margin-top: 0; }
-  #tour #tourContent .tourDesc {
-    display: inline-block;
-    margin-left: 3%; }
-    #tour #tourContent .tourDesc p {
-      font-size: 0.8em; }
+    opacity: 0.7; }
+  #tour #tourContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0; }
+    #tour #tourContent .dateBox {
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      border: solid 2px white;
+      text-align: center; }
+      #tour #tourContent .dateBox h2 {
+        padding-top: 8px;
+        margin-bottom: 0; }
+      #tour #tourContent .dateBox h4 {
+        margin-top: 0; }
+    #tour #tourContent .tourDesc {
+      display: inline-block;
+      margin-left: 3%; }
+      #tour #tourContent .tourDesc p {
+        font-size: 0.8em; }
 
 #testimonials {
   background-color: #fff001;
@@ -3061,8 +3078,6 @@ button:hover {
 
 #blogPosts {
   margin-bottom: 50px; }
-  #blogPosts .blog {
-    width: 287px !important; }
   #blogPosts img {
     width: 100%;
     height: 205px; }
@@ -3104,3 +3119,15 @@ button:hover {
 #prefooter {
   background-color: #1e1e1e;
   color: white; }
+  #prefooter h2 {
+    margin-bottom: 60px; }
+  #prefooter hr {
+    margin: 0.6rem 0;
+    opacity: 0.2; }
+
+#footer {
+  background-color: #1c1c1c;
+  color: white;
+  padding: 0 8%; }
+  #footer #footerLinks .column {
+    text-align: center; }

@@ -72,24 +72,29 @@ html
 							.arrows1
 				+records()
 					//- record carousel
-				button.button-black FULL DISCOGRAPHY
+				.level
+					.level-left
+					.level-right
+						.level-item
+							button.button-black FULL DISCOGRAPHY
+				
 
 		//- tour dates
 		#tour
-			#tourHero
-				//- #darkOverlay
+			#tourParallax
+				#darkOverlay
 				
-				#tourContent.content
-					.level
-						.level-left
-							.level-item
-								h2 TOUR DATES
-						.level-right
-							.level-item
-								button.button-white BUY TICKETS
-					+tourList()
-						//- tour info
-					button.button-white VIEW MORE...
+			#tourContent.content
+				.level
+					.level-left
+						.level-item
+							h2 TOUR DATES
+					.level-right
+						.level-item
+							button.button-white BUY TICKETS
+				+tourList()
+					//- tour info
+				button.button-white(style='margin-top: 30px') VIEW MORE...
 					
 
 		//- testimonials
@@ -141,11 +146,11 @@ html
 							.feed
 								h4 3 years ago
 								hr
-								h4 Look how great sports websites are created @cmsmasters: [LINK HERE]
+								h4 Look how great sports websites are created @cmsmasters: #[a(href="https://t.co/LJzYA0kwIk") https://t.co/LJzYA0kwIk]
 							.feed
 								h4 3 years ago
 								hr
-								h4 Sports Club WordPress Theme by @cmsmasters: [LINK HERE]
+								h4 Sports Club WordPress Theme by @cmsmasters: #[a(href="https://t.co/El0C0Xs5mL") https://t.co/El0C0Xs5mL]
 					.column
 						#photos
 							h2 Photo gallery
@@ -157,4 +162,23 @@ html
 
 						+useful()
 							//- useful links
+
+		//- footer
+		#footer
+			.columns
+				.column
+					h5 All credit goes to #[a(href='http://music-band.cmsmasters.net/') this template]
+				#footerLinks.column
+					.columns
+						.column
+							h5 Tickets
+						.column
+							h5 Contacts
+						.column
+							h5 Tour
+						.column
+							h5 Album
+						.column
+							h5 Meet Us
+
 		
